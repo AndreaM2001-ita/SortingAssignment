@@ -3,7 +3,7 @@
 
 # Q1, task 2: array sorting algorithm design, allowing duplicate elements in A
 
-def countingSort(A):
+def countingSort2(A):
     n=len(A)
     comparisonNumber=0
     if n==0:   # return null in case array is empty
@@ -18,15 +18,20 @@ def countingSort(A):
             if A[index2]<current:
                 count+=1  #add one to the count
         C[index]=count  #insert count in auxuliary array 
-    B=[0]*n  # create second auxiliary array, in order not to lose any values from A during swapping of values
     
+    
+    #eliminate ducplicate in C
+    for index, current in enumerate(C):
+        count=0
+        for index2 in range(0,len(C)-1):
+            comparisonNumber+=1
+            if current==C[index2]:  #if current valuwe of C has ducplicates within its array
+                C[index2]=current+count  #incrememnt value
+                count+=1  #change count
+
+    B=[0]*n  # create second auxiliary array, in order not to lose any values from A during swapping of values
     for index, current in enumerate(A):
         B[C[index]]=current  #move values to their correct postion in ascending order
 
-    for index in range(n):  #go through the new array
-        comparisonNumber+=1
-        if B[index]==0:   # and if the value found is zero, it means there is a dublicate
-            B[index]=B[index-1]   #substitute the zero with the precedent value which is justa ducplicate of the current one
-            
     return B ,comparisonNumber #return array
                 

@@ -4,7 +4,7 @@ File: testInsertionSort.py
 Tests the Insertion sort algorithm
 """
 
-def InsertionSort(lyst):
+def insertionSort(lyst):
     comparisonNumber=0
     i=1                               # starting point to be inserted
     while i<len(lyst):                # Do n-1 insertion

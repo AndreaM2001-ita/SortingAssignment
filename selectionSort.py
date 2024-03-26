@@ -4,7 +4,7 @@ File: testSelectionSort.py
 Tests the Selection sort algorithm
 """
 
-def SelectionSort(lyst):
+def selectionSort(lyst):
     comparisonNumber=0
     i=0
     while i<len(lyst)-1:     # Do n-1 search

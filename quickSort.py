@@ -4,7 +4,7 @@ File: testquicksort.py
 Tests the quicksort algorithm
 """
 
-def quicksort(lyst):
+def quickSort(lyst):
     lyst, comparisonNumber=quicksortHelper(lyst, 0, len(lyst) - 1,0)
     return lyst, comparisonNumber
 
